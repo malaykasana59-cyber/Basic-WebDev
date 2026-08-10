@@ -1,0 +1,23 @@
+#d1{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+}
+
+/* @media (width : 600px){
+    #d1{
+        background-color: black;
+    }
+} */
+
+@media (max-width: 600px){
+    #d1{
+        background-color: white;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 600px){
+    #d1{
+        background-color: grey;
+    }
+}
