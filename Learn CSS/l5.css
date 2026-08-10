@@ -1,0 +1,50 @@
+#box1{
+    height: 100px;
+    width: 200px;
+    background-color: green;
+    font-size: 20px;
+}
+
+#inbox1{
+    height: 50px;
+    width: 50px;
+    /* width: 30%; */
+    background-color: yellow;
+    margin: 10%;
+    font-size: 0.5em;
+    /* width: 5rem; */
+    /* height: 50vh; */
+    /* width: 50vw; */
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#box2{
+    position: sticky;
+    z-index: 3;
+    background-image: url(chrome://global/skin/illustrations/no-connection.svg);
+    background-size: cover;
+}
+#box3{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+#box4{
+    position: absolute;
+    top: 10px;
+}
+#box5{
+    position: fixed;
+    left: 10px;
+    bottom: 0px;
+    width: 100vw; 
+}
+/* top bottom left right */
+/* static(no change), relative(change position relative to itself), absolute(relative to parent structure), fixed(to the browser), sticky(relative + always on screen) */
