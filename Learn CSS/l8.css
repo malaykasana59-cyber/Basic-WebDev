@@ -1,0 +1,77 @@
+#d1{
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    /* transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s; */
+    transition: all 0.5s ease-in 0s;
+}
+
+#d1:hover {
+    background-color: rgb(41, 148, 112);
+    color: aliceblue;
+    font-size: 20px;
+}
+#d1:active{
+    background-color: black;
+    color: aliceblue;
+}
+
+#d2{
+    height: 100px;
+    width: 150px;
+    margin: 50px;
+    background-color: blueviolet;
+    color: aliceblue;
+    /* rotate: z 90deg; */
+    /* rotate: y 180deg; */
+    /* transform: scale(1,2); */
+    transition: all 1s ease-in 0s;
+}
+#d2:hover{
+    /* transform: rotate(180deg); */
+    /* transform: translate(50px,50px); */
+    transform: skew(45deg);
+}
+
+#d3{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    color: aliceblue;
+    /* margin-left: 100px; */
+    position: relative;
+    left: 100px;
+    transition: all 1s ease-in;
+    /* animation-name: colorAnimate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate; */
+    animation: positionAnimate 2s ease-in 0s infinite normal;
+}
+/* @keyframes colorAnimate{
+    from {background-color: black;}
+    to {background-color: white;}
+} */
+@keyframes positionAnimate{
+    0% {
+        left: 0px;
+        background-color: yellow;
+    }
+    50% {
+        background-color: black;
+    }
+    100% {
+        left: 300px;
+        background-color: aliceblue;
+    }
+}
+#d3:hover{
+    background-color: white;
+    color: black;
+}
