@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Delhi Technological University Library mock dashboard">
+  <title>DTU Library | Student dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="primary-sidebar" aria-label="Primary navigation">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">DTU</div>
+        <div>
+          <strong>DTU Library</strong>
+          <span>Knowledge Commons</span>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Library sections">
+        <a class="nav-item is-active" href="#dashboard" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">⌂</span> Dashboard
+        </a>
+        <a class="nav-item" href="#catalog">
+          <span class="nav-icon" aria-hidden="true">⌕</span> Browse catalog
+        </a>
+        <a class="nav-item" href="#issued">
+          <span class="nav-icon" aria-hidden="true">▤</span> My issued books
+          <span class="nav-count">3</span>
+        </a>
+        <a class="nav-item" href="#announcements">
+          <span class="nav-icon" aria-hidden="true">◇</span> Announcements
+        </a>
+      </nav>
+
+      <div class="sidebar-footnote">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div><strong>Library help desk</strong><br><span>Mon–Fri · 09:00–18:00</span></div>
+      </div>
+    </aside>
+
+    <main id="dashboard">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" type="button" aria-controls="primary-sidebar" aria-expanded="false" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Library portal</span><span aria-hidden="true">/</span><strong>Dashboard</strong></div>
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" aria-label="View notifications" title="Notifications"><span class="notification-dot"></span>♢</button>
+          <div class="profile-chip" aria-label="Signed in as Malay Kasana">
+            <span class="avatar">AS</span>
+            <span class="profile-copy"><strong>Malay Kasana</strong><small>SE · 3rd year</small></span>
+            <span aria-hidden="true">⌄</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome-row" aria-labelledby="welcome-title">
+          <div>
+            <p class="eyebrow">Monday, 14 September 2026</p>
+            <h1 id="welcome-title">Good morning, Malay<span class="accent-dot">.</span></h1>
+            <p class="lede">Pick up where you left off or find your next great read.</p>
+          </div>
+          <div class="mock-notice"><span class="status-dot" aria-hidden="true"></span><span><strong>Demo workspace</strong><br>Showing sample library data</span></div>
+        </section>
+
+        <section class="stats-grid" aria-label="Library summary">
+          <article class="stat-panel stat-primary"><span class="stat-label">Books currently issued</span><strong>03</strong><span class="stat-meta">of 06 allowed</span><span class="stat-glyph" aria-hidden="true">▤</span></article>
+          <article class="stat-panel"><span class="stat-label">Due this week</span><strong>01</strong><span class="stat-meta warning-text">Due in 2 days</span><span class="stat-glyph amber-glyph" aria-hidden="true">◷</span></article>
+          <article class="stat-panel"><span class="stat-label">Reading activity</span><strong>12<span class="small-unit"> hrs</span></strong><span class="stat-meta">this month</span><span class="stat-glyph green-glyph" aria-hidden="true">↗</span></article>
+        </section>
+
+        <section class="search-panel" id="catalog" aria-labelledby="search-title">
+          <div class="section-heading compact-heading"><div><p class="eyebrow">Explore the collection</p><h2 id="search-title">What are you looking for?</h2></div><span class="collection-note">42,680+ items in the catalogue</span></div>
+          <form class="catalog-search" id="catalog-search">
+            <label class="search-field"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search by title, author, ISBN or subject" autocomplete="off"><kbd>/</kbd></label>
+            <label class="sr-only" for="category-filter">Filter by category</label>
+            <select id="category-filter"><option value="all">All categories</option><option value="engineering">Engineering</option><option value="computing">Computing</option><option value="design">Design & architecture</option><option value="business">Business</option></select>
+            <button class="button button-dark" type="submit">Search <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="filter-row" role="group" aria-label="Quick category filters">
+            <span class="filter-label">Quick filters</span>
+            <button class="filter-chip is-selected" type="button" data-category="all">All books</button>
+            <button class="filter-chip" type="button" data-category="engineering">Engineering</button>
+            <button class="filter-chip" type="button" data-category="computing">Computing</button>
+            <button class="filter-chip" type="button" data-category="design">Design</button>
+            <button class="filter-chip" type="button" data-category="business">Business</button>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="catalog-results-title">
+          <div class="section-heading"><div><p class="eyebrow">Popular right now</p><h2 id="catalog-results-title">Available to borrow</h2></div><button class="text-button" type="button" id="view-all">View full catalog <span aria-hidden="true">↗</span></button></div>
+          <p class="result-status" id="result-status" aria-live="polite"></p>
+          <div class="book-grid" id="book-grid"></div>
+        </section>
+
+        <div class="lower-grid">
+          <section class="content-section issued-section" id="issued" aria-labelledby="issued-title">
+            <div class="section-heading"><div><p class="eyebrow">Keep your pace</p><h2 id="issued-title">Your issued books</h2></div><span class="count-label">3 active</span></div>
+            <div class="issued-list" id="issued-list"></div>
+          </section>
+          <aside class="announcement-panel" id="announcements" aria-labelledby="announcement-title">
+            <div class="section-heading"><div><p class="eyebrow">From the library</p><h2 id="announcement-title">Announcements</h2></div><button class="icon-button small-button" type="button" aria-label="More announcements">•••</button></div>
+            <article class="announcement-item featured-announcement"><span class="announcement-tag">EVENT · 18 SEP</span><h3>Library orientation week</h3><p>Find your research rhythm. Join a 30-minute guided tour of the new digital resources.</p><a href="#announcements">Reserve a seat <span aria-hidden="true">→</span></a></article>
+            <article class="announcement-item"><span class="announcement-tag">NOTICE · 12 SEP</span><h3>Extended hours during exams</h3><p>Reading rooms stay open until 22:00 from 21 September.</p></article>
+          </aside>
+        </div>
+
+        <footer class="site-footer"><span>Delhi Technological University · Central Library</span><span>Mock interface · No live account or inventory connected</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
